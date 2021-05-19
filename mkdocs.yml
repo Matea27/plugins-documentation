@@ -1,0 +1,8 @@
+site_name: "Plugins"
+site_description: "Documentation on how to create a plugin"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core

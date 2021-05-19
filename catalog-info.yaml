@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "Plugins"
+  description: "Documentation on how to create a plugin"
+  annotations:
+    github.com/project-slug: Matea27/plugins-documentation
+    backstage.io/techdocs-ref: url:https://github.com/Matea27/plugins-documentation
+spec:
+  type: documentation
+  lifecycle: experimental
+  owner: "Matea27"
