@@ -2,27 +2,29 @@
 
 Documentation on how to create a plugin
 
-## Getting started
+## Intro to plugins
 
-Start write your documentation by adding more markdown (.md) files to this folder (/docs) or replace the content in this file.
+Backstage is a single-page application composed of a set of plugins which provide features. Each plugin is treated as a self-contained web app and can include almost any type of content.
+Plugins looks like a mini project on its own with a package.json and src folder. Read more about a [Plugin Developement](https://backstage.io/docs/plugins/plugin-development) and [Structure of a Plugin](https://backstage.io/docs/plugins/structure-of-a-plugin).
 
-## Table of Contents
+## Create a Backstage Plugin
+First, clone the backstage app repository. Create a new branch from master. For example feature/plugin-example. Make sure you have run **yarn install** and installed dependencies, then run the following on your command line (a shortcut to invoking the [backstage-clie create-plugin][https://backstage.io/docs/cli/commands#create-plugin]) from the root of your project.
+```bash
+yarn create-plugin
+```
+![](../pictures/output.png)
 
-The Table of Contents on the right is generated automatically based on the hierarchy
-of headings. Only use one H1 (`#` in Markdown) per file.
+This will create a new Backstage plugin based on the ID that was provided. It will be built and added to the Backstage App automatically.
 
-## Site navigation
+---
+**NOTE**
+If **yarn start** is already running you should be able to see the default page for your new plugin directly by navigating to **http://localhost:3000/my-plugin**.
+---
+![](../pictures/output2.png)
 
-For new pages to appear in the left hand navigation you need edit the `mkdocs.yml`
-file in root of your repo. The navigation can also link out to other sites.
+You can also serve the plugin in isolation by running **yarn start** in the plugin directory. Or by using the yarn workspace command, for example:
+```bash
+yarn workspace @backstage/plugin-welcome start # Also supports --check
+```
+This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads. It is only meant for local development, and the setup for it can be found inside the plugin's dev/ directory.
 
-Alternatively, if there is no `nav` section in `mkdocs.yml`, a navigation section
-will be created for you. However, you will not be able to use alternate titles for
-pages, or include links to other sites.
-
-Note that MkDocs uses `mkdocs.yml`, not `mkdocs.yaml`, although both appear to work.
-See also <https://www.mkdocs.org/user-guide/configuration/>.
-
-## Support
-
-That's it. If you need support, reach out in [#docs-like-code](https://discord.com/channels/687207715902193673/714754240933003266) on Discord.
