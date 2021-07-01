@@ -12,7 +12,7 @@ First, clone the backstage app repository. Create a new branch from master. For 
 ```bash
 yarn create-plugin
 ```
-![](./output.png)
+![](./pictures/output.png)
 
 This will create a new Backstage plugin based on the ID that was provided. It will be built and added to the Backstage App automatically.
 
@@ -20,7 +20,7 @@ This will create a new Backstage plugin based on the ID that was provided. It wi
 **NOTE**
 If **yarn start** is already running you should be able to see the default page for your new plugin directly by navigating to **http://localhost:3000/my-plugin**.
 ---
-![](./output2.png)
+![](./pictures/output2.png)
 
 You can also serve the plugin in isolation by running **yarn start** in the plugin directory. Or by using the yarn workspace command, for example:
 ```bash
