@@ -97,7 +97,7 @@ export type CustomFilters = DefaultEntityFilters & {
 ```
 To control this filter, we can create a React component that shows checkboxes for the security tiers. This component will make use of the **useEntityListProvider** hook, which accepts this extended filter type as a [generic](https://www.typescriptlang.org/docs/handbook/2/generics.html) parameter:
 
-```ts
+```tsx
 export const EntitySecurityTierPicker = () => {
   // The securityTiers key is recognized due to the CustomFilter generic
   const {
@@ -140,7 +140,7 @@ export const EntitySecurityTierPicker = () => {
 };
 ```
 Now we can add the component to **CustomCatalogPage**:
-```ts
+```tsx
 export const CustomCatalogPage = () => {
   return (
     ...
@@ -159,7 +159,7 @@ export const CustomCatalogPage = () => {
 ```
 This page itself can be exported as a routable extension in the plugin:
 
-```ts
+```tsx
 export const CustomCatalogIndexPage = myPlugin.provide(
   createRoutableExtension({
     component: () =>
@@ -169,7 +169,7 @@ export const CustomCatalogIndexPage = myPlugin.provide(
 );
 ```
 Finally, we can replace the catalog route in the Backstage application with our new **CustomCatalogIndexpage**
-```ts
+```tsx
 # packages/app/src/App.tsx
 const routes = (
   <FlatRoutes>
